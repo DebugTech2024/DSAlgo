@@ -1,1 +1,35 @@
+<<<<<<< HEAD
 /target/
+=======
+# Maven dependencies
+/target/
+*.jar 
+*.war 
+*.ear 
+
+# Logs
+*.log
+logs/
+log/
+
+# Eclipse specific files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.iws
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore test reports
+*.html
+*.xml
+*.json
+reports/
+test-output/
+>>>>>>> refs/remotes/origin/master
