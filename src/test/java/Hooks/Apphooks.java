@@ -3,6 +3,7 @@ package Hooks;
 import java.util.Properties;
 
 
+
 import org.openqa.selenium.WebDriver;
 
 import Crossbrowser.DriverFactory;
@@ -12,6 +13,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
 public class Apphooks {
+	@SuppressWarnings("unused")
 	private static DriverFactory driverfactory;
 	public WebDriver driver;
 	private static ConfigFileReader configFileReader;

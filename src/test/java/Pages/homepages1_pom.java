@@ -24,6 +24,7 @@ public class homepages1_pom {
 	By  warning_msg = By.xpath("//div[@role='alert']");
 	By  Array_btn =By.xpath("/html/body/div[3]/div[2]/div/div/a");
 	By  Register_btn = By.xpath("//*[@id=\"navbarCollapse\"]/div[2]/ul/a[2]");
+	By consol=By.xpath("/html/body/div[2]");
 	
 	public homepages1_pom( WebDriver driver) {
 		this. driver = driver;
@@ -60,6 +61,9 @@ public class homepages1_pom {
 	 public void register () {
 		 driver.findElement(Register_btn).click();
 		 
+	 }
+	 public void msg() {
+		 driver.findElement(consol).getText();
 	 }
 	
 }

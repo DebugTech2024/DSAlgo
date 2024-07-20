@@ -86,7 +86,8 @@ CommonPage datapage=new CommonPage(DriverFactory.getDriver());
 	public void user_should_able_to_see_an_warning_message(String string) {
 	    hp1=new homepages1_pom(driver);
 	    LoggerLoad.info("warning1:you are not logged in");
-	    System.out.println("you are not logged in");
+	    hp1.msg();
+	    //System.out.println("you are not logged in");
 	}
 
 	@When("user clicks any of the Get started buttons below the data structures")
@@ -100,7 +101,8 @@ CommonPage datapage=new CommonPage(DriverFactory.getDriver());
 	public void it_should_alert_the_user_with_a_message(String string) {
 	    hp1= new homepages1_pom(driver);
 	    LoggerLoad.info("warning2:you are not logged in");
-	    System.out.println("you are not logged in");
+	    hp1.msg();
+	    //System.out.println("you are not logged in");
 	}
 
 	@When("user clicks Register")
@@ -113,7 +115,7 @@ CommonPage datapage=new CommonPage(DriverFactory.getDriver());
 
 	@Then("user should be redirected to Register form")
 	public void user_should_be_redirected_to_register_form() {
-	    
+	    driver.quit();
 	}
 }
 
