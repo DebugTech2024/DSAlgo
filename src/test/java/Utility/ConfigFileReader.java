@@ -12,9 +12,11 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class  ConfigFileReader {
-private Properties properties;
-private final String configFilePath= "configs/config.properties";
+private static Properties properties;
+private final static String configFilePath= "configs/config.properties";
+
 public ConfigFileReader() {
+	//public static  Properties init_prop() {
 
 File  ConfigFile=new File(configFilePath);
 
@@ -47,6 +49,7 @@ try {
 throw new RuntimeException("config.properties not found at config file path"  + configFilePath);
 
       }
+return ;
 
   }
 
@@ -95,7 +98,7 @@ throw new RuntimeException("password not specified in the config.properties file
 }
 
 
-public String getBrowser() {
+public   String getBrowser() {
 
 String browser= properties.getProperty("browser");
 
@@ -140,14 +143,44 @@ throw new  Exception("Environment not specified in the config.properties file.")
 
 }
 
-public Object init_prop() {
-	// TODO Auto-generated method stub
-	return null;
 }
+/*
+​
 
- 
+	private static String browserType = null;
+
+public static void setBrowserType(String browser) {
+
+	
+
+		browserType = browser;
+
+	}
+
+	public static  String getBrowserType() throws Throwable {
+
+		if (browserType != null)
+
+			return browserType;
+
+		else
+
+			throw new RuntimeException("browser not specified in the testng.xml");
+
+	}
+
+	
+
+}*/
+
+
+
+	
 
 
 
 
-}
+
+
+
+

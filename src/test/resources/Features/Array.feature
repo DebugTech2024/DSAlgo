@@ -80,7 +80,46 @@ Feature: Array Home Page Functionality
       | Sheetname | rownumber |
       | Sheet7    |         0 |
       | Sheet7    |         1 |
+
+  Scenario Outline: practice page
+    Given user enter max consective ones page
+    When user enter invalid code to the excel sheet "<sheetname>" and <rownumber>
+    Then user get pop up message
+    When user enter to valid code to excel sheet "<sheetname>" and <rownumber>
+    And user got output in console
+    And user click submit button
+    And user get error message
+
+    Examples: 
+      | Sheetname | rownumber |
+      | Sheet9    |         0 |
+      | Sheet9    |         1 |
       
-      Scenario Outline: practice page 
-      Given user enter 
+
+      Scenario Outline: practice page find number 
+      Given user enter find numbers with even of digits and clicks
+      When user enter invalid code to excel sheet "<sheetname>" and <rownumber>
+      Then user got pop message and click ok button
+      When user enter valid code excel sheet "<sheetname>" and <rownumber>
+      And user get output msg in console and click
+      And user ok submit button
+      Then user get error message in the console 
       
+      Examples:
+      | Sheetname| rownumber|
+      | Sheet10  |         0|
+      | Sheet10  |         1|
+      
+      Scenario Outline: practice page square
+      Given user enter square of sorted array page
+      When user send invalid code from excel sheet "<sheetname>" and <rownumber>
+      Then user get error msg in the pop up
+      When user send valid code from excel sheet "<sheetname>" and <rownumber>
+      Then user saw output in console 
+      And user click submit button in the bottom
+      And user get error message in the bottom
+      
+      Examples:
+        | Sheetname| rownumber|
+        | Sheet11  |         0|
+        | Sheet11  |         1|

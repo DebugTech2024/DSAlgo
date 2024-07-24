@@ -20,9 +20,8 @@ public  class homepage1 {
 	 public homepages1_pom hp1;
 	
 private static final Logger logger =LogManager.getLogger(homepage1.class);
-CommonPage datapage=new CommonPage(DriverFactory.getDriver());
-	 
-    @Given("user open browser page")
+
+@Given("user open browser page")
 	public void user_open_browser_page() {
     	driver = new ChromeDriver();
     	configFileReader = new ConfigFileReader();

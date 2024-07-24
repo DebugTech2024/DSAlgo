@@ -48,11 +48,12 @@ private	By gra_drop_brn=By.xpath("//html");
 private	By try_btn=By.xpath("//a[@class='btn btn-info']");
 private	By codebox=By.xpath("//div[@class='input']/div/div/textarea");
 private	By Run=By.xpath("//*[@id=\"answer_form\"]/button");
-
+ private By console=By.xpath("//*[@id=\"output\"]");
+ private By get=By.xpath("//a[@href='graph']");
 	
 
 private	By graphrep=By.xpath("//a[normalize-space()='Graph Representations']");
-private	By trybtn=By.xpath("/html/body/div[2]/div/div[2]/a");
+private	By trybtn=By.xpath("//a[@class='btn btn-info']");
 private	By prque=By.xpath("//a[@class='list-group-item list-group-item-light text-info']");
 	
 
@@ -78,17 +79,16 @@ private	By consolemsg=By.xpath("//*[@id=\"output\"]");
    }
   
     public void graphbtn() throws InterruptedException {
-    	
-    //	WebElement getbtn=driver.findElement(By.xpath("/html/body/div[3]/div[7]/div/div/a"));
-    	JavascriptExecutor js=(JavascriptExecutor)driver;
+    	driver.findElement(get).click();
+         JavascriptExecutor js=(JavascriptExecutor)driver;
     	js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     	Thread.sleep(2000);
     	
    }
-   public void graph() {
+  // public void graph() {
     	 
-    	driver.findElement(grapg_btn).click();
-    }
+    	//driver.findElement(grapg_btn).click();
+    //}
 	public void graphdrop() {
 		
 		 driver.findElement(gra_drop_brn).click();
@@ -129,9 +129,10 @@ private	By consolemsg=By.xpath("//*[@id=\"output\"]");
 		
 	}
 	public void trbtn() throws InterruptedException {
-	 driver.findElement(trybtn).click();
+		//driver.get("https://dsportalapp.herokuapp.com/graph/graph-representations/");
+	    driver.findElement(trybtn).click();
 		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click()",trybtn);
+		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 		Thread.sleep(2000);
 		}
 	public void  editorbox2(String validcode1) throws InterruptedException {
@@ -144,12 +145,17 @@ private	By consolemsg=By.xpath("//*[@id=\"output\"]");
 		driver.findElement(codebox).sendKeys(Invalidcode1);
 		
 	}
-	
-	public void prque() {
-		driver.findElement(prque).click();
+	public String conmsg() {
+		return driver.findElement(console).getText();
 	}
-	
-	
+	public void gpage() {
+		driver.get("https://dsportalapp.herokuapp.com/graph/");
+		
+	}
+	public void prques() {
+		driver.get("https://dsportalapp.herokuapp.com/graph/practice");
+		//driver.findElement(prque).click();
+	}
 	
 	
 }

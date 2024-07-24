@@ -1,12 +1,14 @@
 package Pages;
 
 import org.apache.logging.log4j.Logger;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 //import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -37,6 +39,9 @@ public	WebDriver driver;
 	By prb=By.xpath("//*[@id=\"answer_form\"]/button");
 	By sub= By.xpath(" //input[@value='Submit']");
 	By out=By.xpath("//*[@id=\"output\"]");
+	By maxc=By.xpath("//a[normalize-space()='Max Consecutive Ones']");
+	By find=By.xpath("//a[normalize-space()='Find Numbers with Even Number of Digits']");
+	By square=By.xpath("//a[contains(text(),'Squares of')]");
 
 	public Array_pom(WebDriver driver) {
 		this. driver = driver;
@@ -50,6 +55,7 @@ public	WebDriver driver;
 		public void sign() {
 			driver.findElement(sign_btn).click();
 		}
+		
 		public void usernamebtn() {
 			driver.findElement( Username).sendKeys("DebugTech");
 		}
@@ -136,10 +142,8 @@ public	WebDriver driver;
 	public void search() {
 		driver.findElement(searchpa).click();
 	}
-	//public void edibox1() {
-		//driver.findElement(hidebx).clear();
-	//}
-	public void edibox(String Invalidcode) {
+	
+	public void edibox1(String Invalidcode) {
 		driver.findElement(hidebx).sendKeys(Invalidcode);
 	}
 	public void edibox2(String validcode) {
@@ -151,15 +155,59 @@ public	WebDriver driver;
 	public void submit() {
 		driver.findElement(sub).click();
 	}
-	public void con() {
-		driver.findElement(out).click();
+	public String con() {
+	return	driver.findElement(out).getText();
+		
 	}
 	public void tr() {
 		driver.get("https://dsportalapp.herokuapp.com/question/1");
 	}
 	public void cle() {
-		driver.findElement(hidebx).click();
-		Actions.click(hidebx);
-		Actions.keyDown(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL).send_keys(Keys.DELETE);
+	WebElement clea=driver.findElement(By.xpath("//*[@id=\"answer_form\"]/div/div/div[1]/textarea"));
+	    Actions actions = new Actions(driver);
+	    actions.click(clea);
+	    actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE);
+	    actions.perform();
 	}
+public void max() {
+		driver.findElement(maxc).click();
+	}
+public void maxqu() {
+	driver.get("https://dsportalapp.herokuapp.com/question/2");
+}
+	public void edibox3(String Invalidcode) {
+		driver.findElement(hidebx).sendKeys(Invalidcode);
+	}
+	public void edibox4(String validcode) {
+		driver.findElement(hidebx).sendKeys(validcode);
+	}
+	public void findnum() {
+		driver.findElement(find).click();
+		}
+	public void findque() {
+		driver.get("https://dsportalapp.herokuapp.com/question/3");
+	}
+	public void edibox5(String Invalidcode) {
+		driver.findElement(hidebx).sendKeys(Invalidcode);
+	}
+	public void edibox6(String validcode) {
+		driver.findElement(hidebx).sendKeys(validcode);
+	}
+	public String outp() {
+		return driver.findElement(out).getText();
+	}
+	public void squarepg() {
+	
+		driver.findElement(square).click();
+	}
+	public void squque() {
+		driver.get("https://dsportalapp.herokuapp.com/question/4");
+	}
+	public void edibox7(String Invalidcode) {
+		driver.findElement(hidebx).sendKeys(Invalidcode);
+	}
+	public void edibox8(String validcode) {
+		driver.findElement(hidebx).sendKeys(validcode);
+	}
+	
 }
