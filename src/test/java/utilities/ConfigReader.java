@@ -39,5 +39,31 @@ public class ConfigReader {
 			throw new RuntimeException("homeurl not specified in config.properties file");
 		
 	}
+	public String setBrowser() {
+		String browser=prop.getProperty("browser");
+		return browser;
+
+	}
+	private static String browserType;
+
+		public static String getBrowserType() throws Throwable {
+
+			
+			if(browserType != null)
+
+			return browserType;
+
+			else
+
+			throw new RuntimeException("browser not specified in the config.properties file.");
+
+			}
+		public static void setBrowserType(String browser) {
+			// TODO Auto-generated method stub
+			browserType=browser;
+		}
 	
 	}
+	
+	
+	

@@ -1,5 +1,5 @@
 Feature: Signin functionality
-
+@signin
   Scenario Outline: User on login page and login with invalid and valid inputs from Excel "<Sheetname>" and
      <RowNumber>
 
