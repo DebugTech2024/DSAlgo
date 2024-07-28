@@ -15,7 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 
 @SuppressWarnings("restriction")
 public class homepages1_pom {
-	private  WebDriver driver ;
+	private static WebDriver driver ;
 	
     
     By  getstarted_btn =By.xpath("/html/body/div[1]/div/div/a/button");
@@ -30,9 +30,6 @@ public class homepages1_pom {
 		this. driver = driver;
 		PageFactory.initElements( driver,this);
 	}
-	
-	
-	
 	public void getstarted () {
 		driver.findElement(getstarted_btn).click();
 		
@@ -62,8 +59,8 @@ public class homepages1_pom {
 		 driver.findElement(Register_btn).click();
 		 
 	 }
-	 public void msg() {
-		 driver.findElement(consol).getText();
+	 public String msg() {
+		 return driver.findElement(consol).getText();
 	 }
 	
 }

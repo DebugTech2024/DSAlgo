@@ -3,8 +3,9 @@ package Pages;
 import java.io.IOException;
 
 
+
 import java.time.Duration;
-//import java.time.Duration;
+
 import java.util.List;
 import java.util.Map;
 
@@ -33,14 +34,7 @@ import io.cucumber.core.logging.Logger;
 @SuppressWarnings("unused")
 public class Graph_pom {
 	
-  private WebDriver driver;
-	
-	
-private	By get_btn =By.xpath("/html/body/div[1]/div/div/a/button");
-private	By sign_btn = By.xpath("//a[normalize-space()='Sign in']");
-private	By Username=By.xpath("//input[@id='id_username']");
-private	By Password=By.xpath("//input[@id='id_password']");
-private	By log_btn =By.xpath("//input[@value='Login']" );
+  public  static WebDriver driver;
 	
 private	By graphget_btn =By.xpath("/html/body/div[3]/div[7]/div/div/a");
 private	By grapg_btn = By.xpath("//a[@class='list-group-item'][normalize-space()='Graph']");
@@ -49,34 +43,20 @@ private	By try_btn=By.xpath("//a[@class='btn btn-info']");
 private	By codebox=By.xpath("//div[@class='input']/div/div/textarea");
 private	By Run=By.xpath("//*[@id=\"answer_form\"]/button");
  private By console=By.xpath("//*[@id=\"output\"]");
- private By get=By.xpath("//a[@href='graph']");
+  By get=By.xpath("//a[@href='graph']");
 	
 
 private	By graphrep=By.xpath("//a[normalize-space()='Graph Representations']");
 private	By trybtn=By.xpath("//a[@class='btn btn-info']");
 private	By prque=By.xpath("//a[@class='list-group-item list-group-item-light text-info']");
-	
-
 private	By consolemsg=By.xpath("//*[@id=\"output\"]");
-	public Graph_pom( WebDriver driver) {
-		this. driver = driver;
+	
+	@SuppressWarnings("static-access")
+	public Graph_pom(WebDriver driver) {
+		this.driver = driver;
 	   PageFactory.initElements( driver,this);
 	 }
-	public void getbtn() {
-		driver.findElement(get_btn).click();
-	}
-	public void signinbtn() {
-		driver.findElement(sign_btn).click();
-	}
-	public void usernamebtn() {
-		driver.findElement( Username).sendKeys("DebugTech");
-	}
-	public void passwordbtn() {
-		driver.findElement(Password).sendKeys("SDETjune24#");
-	}
-	 public void logbtn() throws InterruptedException {
-	 driver.findElement(log_btn).click();
-   }
+ 
   
     public void graphbtn() throws InterruptedException {
     	driver.findElement(get).click();
@@ -85,14 +65,13 @@ private	By consolemsg=By.xpath("//*[@id=\"output\"]");
     	Thread.sleep(2000);
     	
    }
-  // public void graph() {
+   public void graph() {
     	 
-    	//driver.findElement(grapg_btn).click();
-    //}
-	public void graphdrop() {
-		
-		 driver.findElement(gra_drop_brn).click();
-	}
+    	driver.findElement(grapg_btn).click();
+    }
+	//public void graphdrop() {
+		//driver.findElement(gra_drop_brn).click();
+	//}
 	public void trybtn() {
 		driver.findElement(try_btn).click();
 	}

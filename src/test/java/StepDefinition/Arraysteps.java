@@ -1,7 +1,6 @@
 package StepDefinition;
 
 import org.apache.logging.log4j.LogManager;
-
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
@@ -23,52 +22,37 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import Crossbrowser.Drivers;
+
 
 @SuppressWarnings("unused")
 public class Arraysteps {
 	public  static WebDriver driver;
 	ConfigFileReader configFileReader;
-	 public  Array_pom Ap;
-	 
 	
 	private static final Logger logger =LogManager.getLogger(Arraysteps.class);
-	//private Array_pom Array=new Array_pom (DriverFactory.getDriver());
-		//CommonPage Arraypage=new CommonPage(DriverFactory.getDriver());
+	private Array_pom Ap=new Array_pom (DriverFactory.getDriver());
+		CommonPage Arraypage=new CommonPage(DriverFactory.getDriver());
 		
   @Given("The user is on home page")
 	public void the_user_is_on_home_page() {
-		 driver = new ChromeDriver();
-	   	 configFileReader = new ConfigFileReader();
-	   	 driver.get(configFileReader.getApplicationUrl());
-	   	 driver.manage().window().maximize();
-		 System.out.println("Browser Type is: "+configFileReader.getBrowser());
-	     System.out.println("Application Url is: "+configFileReader.getApplicationUrl());
-	     Ap=new  Array_pom (driver);
-			Ap.get();
-			//Arraypage.dsHomepage();
+		
+			Arraypage.dsHomepage();
 	}
 	@And("the user goes to signin page")
 	public void the_user_goes_to_signin_page() {
-		Ap=new  Array_pom (driver);
-		Ap.sign();
-		//Arraypage.dsSigninpage();
+		
+		Arraypage.dsSigninpage();
 	}
 	@Given("the user enters valid username and password")
 	public void the_user_enters_valid_username_and_password() {
 		
-		String username= configFileReader.getUserName();
-		
-	    Ap.usernamebtn();
-	    String password=configFileReader.getPassword();
-		Ap.passwordbtn(); 
-		//Arraypage.dslogin();
+       Arraypage.dslogin();
 	}
 	
 @Given("the user clicks on login button")
 	public void the_user_clicks_on_login_button() {
-		Ap.log();
-		//Arraypage.dsloginbutton();
+		
+		Arraypage.dsloginbutton();
 	}
    @Given("user in DSAlgo indroduction page")
 	 public void user_in_ds_algo_indroduction_page() {
@@ -78,14 +62,14 @@ public class Arraysteps {
 
    @When("user clicks getstatred button")
 	public void user_clicks_getstatred_button() throws InterruptedException {
-		Ap=new Array_pom (driver);
+		
 		Ap.arraybtn();
 		Thread.sleep(1000);
 	}
 
 	@Then("user clicks on Arrays in python")
 	public void user_clicks_on_arrays_in_python() {
-		Ap=new Array_pom(driver);
+		
 		Ap.arrayinphy();
 	}
 
@@ -131,7 +115,6 @@ public class Arraysteps {
 	public void user_get_output_msg_in_console() {
     	LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Ap.cmsg();
-		System.out.println("finalmsg");
 		LoggerLoad.info(finalmsg);
 		
 	}
@@ -155,7 +138,7 @@ public class Arraysteps {
     	ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet4");
 		String Invalidcode = testdata.get(0).get("pythoncode");
-		System.out.println(testdata.get(0).toString());
+		//System.out.println(testdata.get(0).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + Invalidcode );
 		
 		if (sheetname != null )
@@ -177,7 +160,7 @@ public class Arraysteps {
     	ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet4");
 		String validcode = testdata.get(1).get("pythoncode");
-		System.out.println(testdata.get(1).toString());
+		//System.out.println(testdata.get(1).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + validcode );
 		
 		if (sheetname != null )
@@ -235,7 +218,7 @@ public class Arraysteps {
     	ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet5");
 		String validcode = testdata.get(1).get("pythoncode");
-		System.out.println(testdata.get(1).toString());
+		//System.out.println(testdata.get(1).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + validcode );
 		
 		if (sheetname != null )
@@ -248,7 +231,6 @@ public class Arraysteps {
     public void user_get_output_in_console_box() {
     	LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Ap.cmsg();
-		System.out.println("finalmsg");
 		LoggerLoad.info(finalmsg);
         
     }
@@ -273,7 +255,7 @@ public class Arraysteps {
     	ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet6");
 		String Invalidcode = testdata.get(0).get("pythoncode");
-		System.out.println(testdata.get(0).toString());
+		//System.out.println(testdata.get(0).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + Invalidcode );
 		
 		if (sheetname != null )
@@ -294,7 +276,7 @@ public class Arraysteps {
     	ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet6");
 		String validcode = testdata.get(1).get("pythoncode");
-		System.out.println(testdata.get(1).toString());
+		//System.out.println(testdata.get(1).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + validcode );
 		
 		if (sheetname != null )
@@ -307,7 +289,6 @@ public class Arraysteps {
     public void user_is_console_message_for_output() {
     	LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Ap.cmsg();
-		System.out.println("finalmsg");
 		LoggerLoad.info(finalmsg);
        
     }
@@ -329,7 +310,7 @@ public class Arraysteps {
     	ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet7");
 		String Invalidcode = testdata.get(0).get("pythoncode");
-		System.out.println(testdata.get(0).toString());
+		//System.out.println(testdata.get(0).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + Invalidcode );
 		
 		if (sheetname != null )
@@ -364,8 +345,7 @@ public class Arraysteps {
     public void user_run_button_to_get_message_in_the_console() {
     	LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Ap.cmsg();
-		System.out.println("finalmsg");
-		LoggerLoad.info(finalmsg);
+	    LoggerLoad.info(finalmsg);
     }
 
     @When("user send submit button")
@@ -377,7 +357,6 @@ public class Arraysteps {
     public void user_see_an_error_message() {
     	LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Ap.outp();
-		System.out.println("finalmsg");
 		LoggerLoad.info(finalmsg);
     	
     }
@@ -397,7 +376,7 @@ public class Arraysteps {
     	ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet9");
 		String Invalidcode = testdata.get(0).get("pythoncode");
-		System.out.println(testdata.get(0).toString());
+		//System.out.println(testdata.get(0).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + Invalidcode );
 		if (sheetname != null )
 			Ap.edibox3(Invalidcode);
@@ -421,7 +400,7 @@ public class Arraysteps {
    	ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet9");
 		String validcode = testdata.get(1).get("pythoncode");
-		System.out.println(testdata.get(1).toString());
+		//System.out.println(testdata.get(1).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + validcode );
 		
 		if (sheetname != null )
@@ -435,7 +414,6 @@ public class Arraysteps {
     public void user_got_output_in_console() {
     	LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Ap.cmsg();
-		System.out.println("finalmsg");
 		LoggerLoad.info(finalmsg);
     	
     }
@@ -449,7 +427,6 @@ public class Arraysteps {
     public void user_get_error_message() {
     	LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Ap.outp();
-		System.out.println("finalmsg");
 		LoggerLoad.info(finalmsg);
     	 
     }
@@ -467,7 +444,7 @@ public class Arraysteps {
     	ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet10");
 		String Invalidcode = testdata.get(0).get("pythoncode");
-		System.out.println(testdata.get(0).toString());
+		//System.out.println(testdata.get(0).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + Invalidcode );
 		if (sheetname != null )
 			Ap. edibox5(Invalidcode);
@@ -489,7 +466,7 @@ public class Arraysteps {
        	ExcelReader1 reader = new ExcelReader1();	
     		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet10");
     		String validcode = testdata.get(1).get("pythoncode");
-    		System.out.println(testdata.get(1).toString());
+    		//System.out.println(testdata.get(1).toString());
     		LoggerLoad.info("User Enter valid Pythoncode is \" " + validcode );
     		
     		if (sheetname != null )
@@ -503,7 +480,6 @@ public class Arraysteps {
     public void user_get_output_msg_in_console_and_click() {
     	LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Ap.cmsg();
-		System.out.println("finalmsg");
 		LoggerLoad.info(finalmsg);
     	
     }
@@ -517,7 +493,6 @@ public class Arraysteps {
     public void user_get_error_message_in_the_console() {
     	LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Ap.outp();
-		System.out.println("finalmsg");
 		LoggerLoad.info(finalmsg);
     	
     }
@@ -534,7 +509,7 @@ public class Arraysteps {
     	ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet11");
 		String Invalidcode = testdata.get(0).get("pythoncode");
-		System.out.println(testdata.get(0).toString());
+		//System.out.println(testdata.get(0).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + Invalidcode );
 		if (sheetname != null )
 			Ap. edibox7(Invalidcode);
@@ -555,7 +530,7 @@ public class Arraysteps {
        	ExcelReader1 reader = new ExcelReader1();	
     		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet10");
     		String validcode = testdata.get(1).get("pythoncode");
-    		System.out.println(testdata.get(1).toString());
+    		//System.out.println(testdata.get(1).toString());
     		LoggerLoad.info("User Enter valid Pythoncode is \" " + validcode );
     		
     		if (sheetname != null )
@@ -568,7 +543,6 @@ public class Arraysteps {
     public void user_saw_output_in_console() {
     	LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Ap.cmsg();
-		System.out.println("finalmsg");
 		LoggerLoad.info(finalmsg);
     }
 
@@ -581,11 +555,11 @@ public class Arraysteps {
     public void user_get_error_message_in_the_bottom() {
     	LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Ap.outp();
-		System.out.println("finalmsg");
 		LoggerLoad.info(finalmsg);
     	
-    	driver.quit();
+    	
+		//driver.quit();
     }
-
+    
 
 }

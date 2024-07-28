@@ -17,13 +17,9 @@ import Utility.LoggerLoad;
 
 @SuppressWarnings("unused")
 public class Array_pom {
-public	WebDriver driver;
+public static WebDriver driver;
 	
-	By get_btn =By.xpath("/html/body/div[1]/div/div/a/button");
-	By sign_btn = By.xpath("//a[normalize-space()='Sign in']");
-	By Username=By.xpath("//input[@id='id_username']");
-	By Password=By.xpath("//input[@id='id_password']");
-	By log_btn =By.xpath("//input[@value='Login']" );
+	
 	
 	By arryst_btn=By.xpath("/html/body/div[3]/div[2]/div/div/a");
 	By arraysinpython=By.xpath("//a[normalize-space()='Arrays in Python']");
@@ -43,30 +39,15 @@ public	WebDriver driver;
 	By find=By.xpath("//a[normalize-space()='Find Numbers with Even Number of Digits']");
 	By square=By.xpath("//a[contains(text(),'Squares of')]");
 
+	@SuppressWarnings("static-access")
 	public Array_pom(WebDriver driver) {
 		this. driver = driver;
 		PageFactory.initElements( driver,this);
 		LoggerLoad.info("Driver initializing");
 		
 	}
-	public void get() {
-		driver.findElement(get_btn).click();
-	}
-		public void sign() {
-			driver.findElement(sign_btn).click();
-		}
-		
-		public void usernamebtn() {
-			driver.findElement( Username).sendKeys("DebugTech");
-		}
-		public void passwordbtn() {
-			driver.findElement(Password).sendKeys("SDETjune24#");
-		}
-		public void log() {
-			driver.findElement(log_btn).click();
-		}
-		
-    public void arraybtn() {
+  
+	public void arraybtn() {
 		driver.findElement(arryst_btn).click();
 	}
 	public void arrayinphy() {

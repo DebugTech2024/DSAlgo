@@ -10,14 +10,8 @@ import Utility.LoggerLoad;
 
 public class Queue_pom {
 	
-	public WebDriver driver;
+	public static WebDriver driver;
 	
-	
-	By get_btn =By.xpath("/html/body/div[1]/div/div/a/button");
-	By sign_btn = By.xpath("//a[normalize-space()='Sign in']");
-	By Username=By.xpath("//input[@id='id_username']");
-	By Password=By.xpath("//input[@id='id_password']");
-	By log_btn =By.xpath("//input[@value='Login']" );
 	
 	By get=By.xpath("/html/body/div[3]/div[5]/div/div/a");
 	By imp=By.xpath("//a[normalize-space()='Implementation of Queue in Python']");
@@ -38,23 +32,7 @@ public class Queue_pom {
 		
 	}
 
-public void getbtn() {
-	
-	driver.findElement(get_btn).click();
-}
-public void sign() {
-	driver.findElement(sign_btn).click();
-}
-
-public void usernamebtn() {
-	driver.findElement( Username).sendKeys("DebugTech");
-}
-public void passwordbtn() {
-	driver.findElement(Password).sendKeys("SDETjune24#");
-}
-public void log() {
-	driver.findElement(log_btn).click();
-}
+ 
 public void getbt() throws InterruptedException {
 	driver.findElement(get).click();
 	JavascriptExecutor js=(JavascriptExecutor)driver;

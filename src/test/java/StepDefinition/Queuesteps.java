@@ -1,6 +1,7 @@
 package StepDefinition;
 
 import java.io.IOException;
+
 import java.util.List;
 import java.util.Map;
 
@@ -18,46 +19,39 @@ import Utility.ExcelReader1;
 import Utility.LoggerLoad;
 import io.cucumber.java.en.*;
 
+@SuppressWarnings("unused")
 public class Queuesteps {
 	public static WebDriver driver;
 	ConfigFileReader configFileReader;
-	 public  Queue_pom Qp;
+	
 	
 	private static final Logger logger =LogManager.getLogger(Queuesteps.class);
 	
 	@SuppressWarnings("unused")
-	//private Queue_pom queue=new Queue_pom(DriverFactory.getDriver());
-	//CommonPage queuepage=new CommonPage(DriverFactory.getDriver());
+	private Queue_pom Qp=new Queue_pom(DriverFactory.getDriver());
+	CommonPage queuepage=new CommonPage(DriverFactory.getDriver());
 	@Given("user is queue homepage")
 	public void user_is_queue_homepage() {
-		driver = new ChromeDriver();
-	   	 configFileReader = new ConfigFileReader();
-	   	 driver.get(configFileReader.getApplicationUrl());
-	   	 driver.manage().window().maximize();
-		 System.out.println("Browser Type is: "+configFileReader.getBrowser());
-	     System.out.println("Application Url is: "+configFileReader.getApplicationUrl());
-	     Qp=new   Queue_pom(driver);
-	     Qp.getbtn();
-		//queuepage.dsHomepage();
+		
+		queuepage.dsHomepage();
 	}
 
 	@When("user goes in the sign in page")
 	public void user_goes_in_the_sign_in_page() {
-		Qp.sign();
-		//queuepage.dsSigninpage();
+	
+		queuepage.dsSigninpage();
 	}
 
 	@Then("user clicks is on username and password")
 	public void user_clicks_is_on_username_and_password() {
-		Qp.usernamebtn();
-		Qp. passwordbtn();
-		//queuepage.dslogin();
+		
+		queuepage.dslogin();
 	}
 
 	@Then("user clicks login button")
 	public void user_clicks_login_button() {
-		Qp.log();
-		//queuepage.dsloginbutton();
+		
+		queuepage.dsloginbutton();
 	}
 
 	@Then("user is on Queue perform page")
@@ -94,7 +88,7 @@ public class Queuesteps {
 		ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet12");
 		String validcode = testdata.get(0).get("pythoncode");
-		System.out.println(testdata.get(0).toString());
+	//	System.out.println(testdata.get(0).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + validcode );
 		
 		if (sheetname != null )
@@ -107,7 +101,6 @@ public class Queuesteps {
 	public void user_clicks_run_button_to_see_output_in_the_console() {
 		LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Qp.conmsg();
-		System.out.println("finalmsg");
 		LoggerLoad.info(finalmsg);
 		
 }
@@ -118,7 +111,7 @@ public class Queuesteps {
 		ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet12");
 		String Invalidcode = testdata.get(1).get("pythoncode");
-		System.out.println(testdata.get(1).toString());
+		//System.out.println(testdata.get(1).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + Invalidcode );
 		
 		if (sheetname != null )
@@ -153,7 +146,7 @@ public class Queuesteps {
 		ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet13");
 		String validcode = testdata.get(0).get("pythoncode");
-		System.out.println(testdata.get(0).toString());
+		//System.out.println(testdata.get(0).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + validcode );
 		
 		if (sheetname != null )
@@ -165,7 +158,6 @@ public class Queuesteps {
 	public void user_get_on_console_message() {
 		LoggerLoad.info("User should be able to see console Message");
 		String finalmsg=Qp.conmsg();
-		System.out.println("finalmsg");
 		LoggerLoad.info(finalmsg);
 	}
 
@@ -175,7 +167,7 @@ public class Queuesteps {
 		ExcelReader1 reader = new ExcelReader1();	
 		List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet13");
 		String Invalidcode = testdata.get(1).get("pythoncode");
-		System.out.println(testdata.get(1).toString());
+		//System.out.println(testdata.get(1).toString());
 		LoggerLoad.info("User Enter valid Pythoncode is \" " + Invalidcode );
 		
 		if (sheetname != null )
@@ -216,7 +208,7 @@ public void user_click_send_to_valid_python_code_in_excel_sheet_and(String sheet
 	ExcelReader1 reader = new ExcelReader1();	
 	List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet14");
 	String validcode = testdata.get(0).get("pythoncode");
-	System.out.println(testdata.get(0).toString());
+	//System.out.println(testdata.get(0).toString());
 	LoggerLoad.info("User Enter valid Pythoncode is \" " + validcode );
 	
 	if (sheetname != null )
@@ -229,7 +221,6 @@ public void user_click_send_to_valid_python_code_in_excel_sheet_and(String sheet
 public void user_get_an_array_output_message() {
 	LoggerLoad.info("User should be able to see console Message");
 	String finalmsg=Qp.conmsg();
-	System.out.println("finalmsg");
 	LoggerLoad.info(finalmsg);
     
 }
@@ -240,7 +231,7 @@ public void user_click_to_send_invalid_python_code_in_excel_sheet_and(String she
 	ExcelReader1 reader = new ExcelReader1();	
 	List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet14");
 	String Invalidcode = testdata.get(1).get("pythoncode");
-	System.out.println(testdata.get(1).toString());
+	//System.out.println(testdata.get(1).toString());
 	LoggerLoad.info("User Enter valid Pythoncode is \" " + Invalidcode );
 	
 	if (sheetname != null )
@@ -278,7 +269,7 @@ public void user_enter_valid_pythoncode_to_excel_sheet_in_queue_page_and(String 
 	ExcelReader1 reader = new ExcelReader1();	
 	List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet15");
 	String validcode = testdata.get(0).get("pythoncode");
-	System.out.println(testdata.get(0).toString());
+	//System.out.println(testdata.get(0).toString());
 	LoggerLoad.info("User Enter valid Pythoncode is \" " + validcode );
 	
 	if (sheetname != null )
@@ -290,7 +281,6 @@ public void user_enter_valid_pythoncode_to_excel_sheet_in_queue_page_and(String 
 public void user_get_output_in_console_for_queue_page() {
 	LoggerLoad.info("User should be able to see console Message");
 	String finalmsg=Qp.conmsg();
-	System.out.println("finalmsg");
 	LoggerLoad.info(finalmsg);
 }
 
@@ -300,7 +290,7 @@ public void user_enter_invalid_pythoncode_to_excel_sheet_in_queue_page_and(Strin
 	ExcelReader1 reader = new ExcelReader1();	
 	List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Exceldata/login.xlsx","Sheet15");
 	String Invalidcode = testdata.get(1).get("pythoncode");
-	System.out.println(testdata.get(1).toString());
+	//System.out.println(testdata.get(1).toString());
 	LoggerLoad.info("User Enter valid Pythoncode is \" " + Invalidcode );
 	
 	if (sheetname != null )
@@ -331,7 +321,7 @@ public void user_clicks_on_practice_page() {
 
 @Then("user redirect the home page")
 public void user_redirect_the_home_page() {
-    driver.quit();
+   // driver.quit();
 }
 
 

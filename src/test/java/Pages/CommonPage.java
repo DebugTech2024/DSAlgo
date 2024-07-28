@@ -1,8 +1,11 @@
 package Pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+
+import Utility.LoggerLoad;
 
 public class CommonPage {
 	public WebDriver driver;
@@ -10,15 +13,14 @@ public class CommonPage {
     public By dspassword=By.xpath("//input[@id='id_password']");
 	public By dsmessage=By.xpath("//div[@role='alert']");
 	public By dslogin=By.xpath("//input[@value='Login']");
-	//public By dsHomepage=By.xpath("//*[@id=\"eppiocemhmnlbhjplcgkofciiegomcon\"]");
-	//public By dsDataStructure_getButton=By.xpath("//a[@href='data-structures-introduction']");
-	//public By dsLinkedlist_getButton=By.xpath("//a[@href='linked-list']");
-	public By dsTryhereButton=By.xpath("//a[@class='btn btn-info']");
 	
+	public By dsTryhereButton=By.xpath("//a[@class='btn btn-info']");
+	public By comsg=By.xpath("//*[@id=\"output\"]");
+	 public By runbtn=By.xpath("//button[@type='button']");
 
 	public CommonPage(WebDriver driver) {
 		this.driver=driver;
-		 PageFactory.initElements( driver,this);
+		PageFactory.initElements( driver,this);
 	}
 	public void dsSigninpage() {
 		driver.get("https://dsportalapp.herokuapp.com/login");
@@ -41,9 +43,24 @@ public class CommonPage {
 	public void dsloginbutton() {
 		driver.findElement(dslogin).click();
 	}
-//public void grhomepage() {
-	//driver.get("https://dsportalapp.herokuapp.com/graph/graph/");
-//}
+	public String console() {
+		return driver.findElement(comsg).getText();
+	}
+	public void runbtn() {
+		driver.findElement(runbtn).click();
+	}
+	public void aler() {
+		Alert alert = driver.switchTo().alert(); 
+
+			String alertmsg=driver.switchTo().alert().getText();
+			LoggerLoad.info(alertmsg);
+
+		alert.accept();
+	}
+//Tree	
+public void treepage() {
+	driver.get("https://dsportalapp.herokuapp.com/tree/");
+}
 
 
 

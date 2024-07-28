@@ -1,4 +1,4 @@
-@tag
+@array
 Feature: Array Home Page Functionality
   User is able to perform various functions in Array Page
 
@@ -8,7 +8,7 @@ Feature: Array Home Page Functionality
     And the user enters valid username and password
     And the user clicks on login button
 
-  @tag1
+  @array1
   Scenario Outline: Array in DSAlgo homepage
     Given user in DSAlgo indroduction page
     When user clicks getstatred button
@@ -24,6 +24,7 @@ Feature: Array Home Page Functionality
       | Sheet3    |         0 |
       | Sheet3    |         1 |
 
+@array2
   Scenario Outline: Array using List page
     Given user enter an arrayedit page
     When user clicks on array using list link
@@ -38,6 +39,7 @@ Feature: Array Home Page Functionality
       | Sheet4    |         0 |
       | Sheet4    |         1 |
 
+@array3
   Scenario Outline: Basic operations List page
     Given user is array of basic page
     When user clicks basic operation list page
@@ -52,6 +54,7 @@ Feature: Array Home Page Functionality
       | Sheet5    |         0 |
       | Sheet5    |         1 |
 
+@array4
   Scenario Outline: Application of arraay page
     Given user is application page
     When user enter application of array link
@@ -66,6 +69,7 @@ Feature: Array Home Page Functionality
       | Sheet6    |         0 |
       | Sheet6    |         1 |
 
+@array5
   Scenario Outline: practice question page
     Given user enter practice question page
     When user enter search way page
@@ -81,6 +85,7 @@ Feature: Array Home Page Functionality
       | Sheet7    |         0 |
       | Sheet7    |         1 |
 
+@array6
   Scenario Outline: practice page
     Given user enter max consective ones page
     When user enter invalid code to the excel sheet "<sheetname>" and <rownumber>
@@ -95,8 +100,8 @@ Feature: Array Home Page Functionality
       | Sheet9    |         0 |
       | Sheet9    |         1 |
       
-
-      Scenario Outline: practice page find number 
+@array7
+  Scenario Outline: practice page find number 
       Given user enter find numbers with even of digits and clicks
       When user enter invalid code to excel sheet "<sheetname>" and <rownumber>
       Then user got pop message and click ok button
@@ -109,8 +114,9 @@ Feature: Array Home Page Functionality
       | Sheetname| rownumber|
       | Sheet10  |         0|
       | Sheet10  |         1|
-      
-      Scenario Outline: practice page square
+  
+   @array8   
+  Scenario Outline: practice page square
       Given user enter square of sorted array page
       When user send invalid code from excel sheet "<sheetname>" and <rownumber>
       Then user get error msg in the pop up

@@ -7,7 +7,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/test/resources/Features/Homepage.feature",
-glue={"StepDefinition"},
+glue={"StepDefinition","Hooks"},
 monochrome=true,
 plugin= {"pretty","junit:target/JUnitReports/report.xml",
 		"json:target/JSONReports/report.json",

@@ -2,21 +2,17 @@ package Utility;
 
 
 import java.io.File;
-
 import java.io.FileInputStream;
-
 import java.io.FileNotFoundException;
-
 import java.io.IOException;
-
 import java.util.Properties;
 
 public class  ConfigFileReader {
-private static Properties properties;
+private static Properties prop;
 private final static String configFilePath= "configs/config.properties";
 
-public ConfigFileReader() {
-	//public static  Properties init_prop() {
+//public ConfigFileReader() {
+	public static  Properties init_prop() {
 
 File  ConfigFile=new File(configFilePath);
 
@@ -24,11 +20,11 @@ try {
 
 FileInputStream configFileReader=new FileInputStream(ConfigFile);
 
-      properties = new Properties();
+      prop = new Properties();
 
 try {
 
-      properties.load(configFileReader);
+      prop.load(configFileReader);
 
       configFileReader.close();
 
@@ -49,13 +45,13 @@ try {
 throw new RuntimeException("config.properties not found at config file path"  + configFilePath);
 
       }
-return ;
+return prop ;
 
   }
 
 public String getApplicationUrl() {
 
-String applicationurl= properties.getProperty("url.base");
+String applicationurl= prop.getProperty("url.base");
 
 if(applicationurl != null)
 
@@ -70,7 +66,7 @@ throw new RuntimeException("Application url not specified in the config.properti
 
 public String getUserName() {
 
-String username= properties.getProperty("username");
+String username= prop.getProperty("username");
 
 if(username != null)
 
@@ -85,7 +81,7 @@ throw new RuntimeException("username not specified in the config.properties file
 
 public String getPassword() {
 
-String password= properties.getProperty("password");
+String password= prop.getProperty("password");
 
 if(password != null)
 
@@ -98,9 +94,9 @@ throw new RuntimeException("password not specified in the config.properties file
 }
 
 
-public   String getBrowser() {
+public static  String getBrowser() {
 
-String browser= properties.getProperty("browser");
+String browser= prop.getProperty("browser");
 
 if(browser != null)
 
@@ -111,11 +107,19 @@ else
 throw new RuntimeException("browser not specified in the config.properties file.");
 
 }
+public String homeurl() {
+	String homepageurl=prop.getProperty("homepage");
+	if(homepageurl != null)
+	return homepageurl;
+	else
+		throw new RuntimeException("homeurl not specified in config.properties file");
+
+}
 
 
 public  long getTimeout() {
 
-String timeout= properties.getProperty("timeout");
+String timeout= prop.getProperty("timeout");
 
 if(timeout != null)
 
@@ -130,7 +134,7 @@ throw new RuntimeException("Timeout not specified in the config.properties file.
 
 public String getEnvironment() throws Exception {
 
-String environment= properties.getProperty("environment");
+String environment= prop.getProperty("environment");
 
 
 if(environment != null)
@@ -143,17 +147,11 @@ throw new  Exception("Environment not specified in the config.properties file.")
 
 }
 
-}
-/*
-​
-
-	private static String browserType = null;
+private static String browserType = null;
 
 public static void setBrowserType(String browser) {
 
-	
-
-		browserType = browser;
+      browserType = browser;
 
 	}
 
@@ -171,7 +169,7 @@ public static void setBrowserType(String browser) {
 
 	
 
-}*/
+}
 
 
 

@@ -1,4 +1,4 @@
-@tag
+@queue
 Feature: Queue page functionality
 
   Background: 
@@ -8,7 +8,7 @@ Feature: Queue page functionality
     And user clicks login button
     And user is on Queue perform page
 
-  @tag1
+  @queue1
   Scenario Outline: user is on Queue homepage
     Given user click getstarted button in queue page
     When user clicks implementation of python page
@@ -24,6 +24,7 @@ Feature: Queue page functionality
       | Sheet12   |         0 |
       | Sheet12   |         1 |
 
+@queue2
   Scenario Outline: user is Queue home page function
     Given user enter implentation using collection page
     When user clicks try here button of collection page
@@ -38,8 +39,9 @@ Feature: Queue page functionality
       | sheetname | rownumber |
       | Sheet13   |         0 |
       | Sheet13   |         1 |
-      
-      Scenario Outline: user is Queue home page function
+    
+   @queue3  
+   Scenario Outline: user is Queue home page function
       Given user enter implentation of array page
       When user enter try here button in array page
       Then user enter on try editor page in array
@@ -53,8 +55,9 @@ Feature: Queue page functionality
        | sheetname| rownumber|
        | Sheet14  |         0| 
        | Sheet14  |         1|
-       
-       Scenario Outline:user is on Queue home page function
+     
+     @queue4  
+    Scenario Outline: user is on Queue home page function
        Given user enter queue operations page
        When user click queue page
        Then user clicks try here button on the queue page
@@ -69,6 +72,7 @@ Feature: Queue page functionality
        | sheetname15|          0|
        | sheetname15|          1|
        
+     @queue5
        Scenario Outline: user is on Queue home page function
        Given user is practice page
        When user clicks on practice page

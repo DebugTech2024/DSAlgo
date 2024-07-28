@@ -1,5 +1,7 @@
+@home
 Feature: Home browser page functionality
 
+ @home1
   Scenario: DS Algo home browser page
     Given user open browser page
     When user enter the DS Algo Portal

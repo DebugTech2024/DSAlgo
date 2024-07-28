@@ -1,4 +1,4 @@
-@tag
+@graph
 Feature: Graph Page Functionality
 
   Background: 
@@ -6,6 +6,7 @@ Feature: Graph Page Functionality
     When user submit username and password
     Then user should be logged in
 
+@graph1
   Scenario Outline: Graph home page functionality
     When user is an graph home page
     Then user clicks get strated button
@@ -23,6 +24,7 @@ Feature: Graph Page Functionality
       | Sheet2    |         0 |
       | Sheet2    |         1 |
 
+@graph2
   Scenario Outline: GraphRepresentations page functionality
     Given user is on the Graph page and see Graph Representations
     When user clicks Graph Representations link
@@ -39,6 +41,7 @@ Feature: Graph Page Functionality
       | Sheet8    |         0 |
       | Sheet8    |         1 |
 
+@graph3
   Scenario Outline: Graph practice page
     Then user clicks practice Questions link
     Then user should be redirected to practice Questions page
