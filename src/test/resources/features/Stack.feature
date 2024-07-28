@@ -23,7 +23,6 @@ Feature: Stack Functionality
     And user valid python code operation stack "<sheetname>" and <rownumber> in editor box
     And user click on run button in operation stack page
     Then User is able to see the output in console
-
     Examples: 
       | sheetname | rownumber |
       | Sheet4    |         0 |

@@ -33,8 +33,7 @@ public class pom_register {
 		driver.findElement(regbtn).click();
 	}
 	public String unsuccess_msg() {
-        return driver.findElement(unsuccessmsg).getText();
-		
+        return driver.findElement(unsuccessmsg).getText();	
 	}
 
 }

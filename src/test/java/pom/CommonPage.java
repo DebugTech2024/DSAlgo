@@ -81,6 +81,9 @@ public class CommonPage {
 	public void dsRegisterPage() {
 		driver.get("https://dsportalapp.herokuapp.com/register");
 	}
+	public void dsTreePage() {
+		driver.get("https://dsportalapp.herokuapp.com/tree/");
+	}
 	public void dslogin() {
 		driver.findElement(dsusername).sendKeys("DebugTech");
 		driver.findElement(dspassword).sendKeys("SDETjune24#");

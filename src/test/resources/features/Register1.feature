@@ -5,7 +5,7 @@ Feature: Register web page
   Background: 
     Given User is in registration page link
 
-  @reg1
+  #@reg1
   Scenario Outline: Register with valid username,invalid password,invalid passwordconfirmation
     When User enter valid "<username>" into the textbox
     And User enter invalid "<password>" into the textbox
@@ -18,7 +18,7 @@ Feature: Register web page
       | ninja12  | password12  | pass12          |
       | ninja12  | password@12 | pass13          |
 
-  @reg2
+  #@reg2
   Scenario Outline: Register with valid username,valid password,invalid passwordconfirmation
     When User enter valid "<username1>" into the username textbox
     And User enter valid "<password1>" into the password textbox

@@ -16,7 +16,7 @@ import utilities.ConfigReader;
 @CucumberOptions(
 features="src/test/resources/features",//location of feature files
 glue= {"step","Hooks"},//location of step definition file
-//tags="@data",
+//tags="@tree",
 plugin= {"pretty","html:target/HtmlReports",//reporting purpose
 "json:target/JSONreports/report.json",
  "junit:target/JUnitReports/report.xml","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
