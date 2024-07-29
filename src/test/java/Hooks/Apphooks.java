@@ -2,6 +2,7 @@ package Hooks;
 
 import java.io.File;
 
+
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
@@ -59,8 +60,8 @@ public  class Apphooks {
 			FileUtils.copyFile(screenShot, new File(destinationPath));
 		}*/
 	}
-	@After
-	public void quitebrowser() {		
+	@After(order=0)
+	public void quitbrowser() {		
 	driver.quit();
 	}
 
