@@ -1,6 +1,7 @@
 @graph
 Feature: Graph Page Functionality
 
+
   Background: 
     Given user navigated to the login page
     When user submit username and password

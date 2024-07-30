@@ -16,3 +16,4 @@ plugin= {"pretty","junit:target/JUnitReports/report.xml",
 public class TestTree2 {
 
 }
+

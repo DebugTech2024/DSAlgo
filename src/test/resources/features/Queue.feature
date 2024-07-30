@@ -1,6 +1,7 @@
 @queue
 Feature: Queue page functionality
 
+
   Background: 
     Given user is queue homepage
     When user goes in the sign in page

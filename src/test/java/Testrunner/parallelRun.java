@@ -4,7 +4,6 @@ import org.junit.runner.RunWith;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
-
 import Utility.ConfigFileReader;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

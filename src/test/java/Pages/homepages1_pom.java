@@ -12,7 +12,6 @@ import org.openqa.selenium.support.PageFactory;
 
 
 
-
 @SuppressWarnings("restriction")
 public class homepages1_pom {
 	private static WebDriver driver ;

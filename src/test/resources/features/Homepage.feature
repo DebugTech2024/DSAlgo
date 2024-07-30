@@ -16,3 +16,4 @@ Feature: Home browser page functionality
     Then It should alert the user with a message "you are not logged in"
     When user clicks Register
     Then user should be redirected to Register form
+
