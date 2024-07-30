@@ -12,6 +12,7 @@ public class CommonPage {
 	public By dsDataStructure_getButton=By.xpath("//a[@href='data-structures-introduction']");
 	public By dsLinkedlist_getButton=By.xpath("//a[@href='linked-list']");
 	public By dsTryhereButton=By.xpath("//a[@class='btn btn-info']");
+	public By dsStack_getButton=By.xpath("//a[@href='stack']");
 	
 	public CommonPage(WebDriver driver) {
 		this.driver=driver;
@@ -49,9 +50,39 @@ public class CommonPage {
 	public void dsImplementLinkedListPage() {
 		driver.get("https://dsportalapp.herokuapp.com/linked-list/implement-linked-list-in-python/");
 	}
+	public void dsTraversalLinkedListPage() {
+		driver.get("https://dsportalapp.herokuapp.com/linked-list/traversal/");
+	}
 	
+	public void dsInsertionLinkedListPage() {
+		driver.get("https://dsportalapp.herokuapp.com/linked-list/insertion-in-linked-list/");
+	}
+	public void dsDeletionLinkedListPage() {
+		driver.get("https://dsportalapp.herokuapp.com/linked-list/deletion-in-linked-list/");
+	}
 	public void dsTryHerebtn() {
 		driver.findElement(dsTryhereButton).click();
+	}
+	public void dsStackGetButton() {
+		driver.findElement(dsStack_getButton).click();
+	}
+	public void dsStackPage() {
+		driver.get("https://dsportalapp.herokuapp.com/stack/operations-in-stack/");
+	}
+	public void dsOperationinStackPage() {
+		driver.get("https://dsportalapp.herokuapp.com/stack/operations-in-stack/");
+	}
+	public void dsImplementionStackPage() {
+		driver.get("https://dsportalapp.herokuapp.com/stack/implementation/");
+	}
+	public void dsApplicationStackPage() {
+		driver.get("https://dsportalapp.herokuapp.com/stack/stack-applications/");
+	}
+	public void dsRegisterPage() {
+		driver.get("https://dsportalapp.herokuapp.com/register");
+	}
+	public void dsTreePage() {
+		driver.get("https://dsportalapp.herokuapp.com/tree/");
 	}
 	public void dslogin() {
 		driver.findElement(dsusername).sendKeys("DebugTech");
@@ -60,8 +91,5 @@ public class CommonPage {
 	public void dsloginbutton() {
 		driver.findElement(dslogin).click();
 	}
-	
-	
-	
 	
 }

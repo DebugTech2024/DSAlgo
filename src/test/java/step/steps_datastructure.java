@@ -73,7 +73,7 @@ public class steps_datastructure {
 	public void the_user_clicks_get_started_button() {
 	    datastructure.databtn();
 	}
-
+ 
 	@Then("The user should land in Data Structure Introduction Page")
 	public void the_user_should_land_in_data_structure_introduction_page() throws InterruptedException {
 	   datastructure.getlandpage();
